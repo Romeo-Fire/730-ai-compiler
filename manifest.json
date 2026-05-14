@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "730 AI Compiler",
+  "version": "1.0.0",
+  "description": "Carica un documento fiscale e compila automaticamente il Modello 730 con l'AI.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://dichiarazioni.agenziaentrate.gov.it/*",
+    "https://*.agenziaentrate.gov.it/*",
+    "https://api.anthropic.com/*",
+    "*://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://dichiarazioni.agenziaentrate.gov.it/*",
+        "https://*.agenziaentrate.gov.it/*",
+        "*://*/*"
+      ],
+      "js": ["content.js"],
+      "css": ["overlay.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "730 AI Compiler"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "730ai@extension",
+      "strict_min_version": "109.0"
+    }
+  }
+}

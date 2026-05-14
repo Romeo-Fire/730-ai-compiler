@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>730 AI Compiler</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap');
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 280px;
+      font-family: 'EB Garamond', Georgia, serif;
+      background: #faf8f3;
+      color: #1a3a5c;
+    }
+    .header {
+      background: #1a3a5c;
+      color: #fff;
+      padding: 14px 16px;
+      border-bottom: 3px solid #c8a84b;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .header-title { font-size: 16px; font-weight: 600; }
+    .header-sub { font-size: 11px; opacity: 0.75; margin-top: 2px; }
+    .body { padding: 16px; }
+    .step {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 14px;
+      align-items: flex-start;
+    }
+    .step-num {
+      background: #c8a84b;
+      color: #1a3a5c;
+      font-weight: 700;
+      font-size: 12px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .step-text { font-size: 13px; color: #333; line-height: 1.5; }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background: #1a3a5c;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      font-family: 'EB Garamond', Georgia, serif;
+      cursor: pointer;
+      text-align: center;
+      margin-top: 4px;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: #0f2540; }
+    .footer {
+      font-size: 10px;
+      color: #aaa;
+      text-align: center;
+      padding: 10px 16px;
+      border-top: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span style="font-size:24px;">🇮🇹</span>
+    <div>
+      <div class="header-title">730 AI Compiler</div>
+      <div class="header-sub">Compilazione automatica con AI</div>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">Apri la pagina del <strong>Modello 730</strong> (Agenzia delle Entrate o CAF)</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">Clicca il <strong>pulsante 🇮🇹 730 AI</strong> in basso a destra nella pagina</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text">Carica il tuo documento (CU, busta paga, ricevute)</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-text">Clicca <strong>"⚡ Compila Campi Pagina"</strong> e l'AI inserisce i dati</div>
+    </div>
+
+    <button class="btn" id="open-settings">⚙️ Imposta API Key</button>
+  </div>
+
+  <div class="footer">Prima di inviare, verifica sempre con un CAF</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

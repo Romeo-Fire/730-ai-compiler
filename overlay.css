@@ -1,0 +1,308 @@
+/* ============================================================
+   730 AI Compiler — Overlay Styles
+   All selectors prefixed with #ai730- to avoid conflicts
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=DM+Mono:wght@400;500&display=swap');
+
+/* ── Reset scope ─────────────────────────────────────────── */
+#ai730-root * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'EB Garamond', Georgia, serif;
+  line-height: 1.4;
+}
+
+/* ── Hidden utility ──────────────────────────────────────── */
+#ai730-root .ai730-hidden {
+  display: none !important;
+}
+
+/* ── FAB (floating button) ───────────────────────────────── */
+#ai730-fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 2147483646;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #1a3a5c;
+  color: #fff;
+  border: 2px solid #c8a84b;
+  border-radius: 50px;
+  padding: 10px 18px 10px 14px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  box-shadow: 0 4px 20px rgba(26,58,92,0.35);
+  transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1);
+  user-select: none;
+}
+
+#ai730-fab:hover {
+  transform: scale(1.06);
+  box-shadow: 0 6px 28px rgba(26,58,92,0.45);
+  background: #0f2540;
+}
+
+#ai730-fab.ai730-active {
+  background: #c8a84b;
+  color: #1a3a5c;
+  border-color: #1a3a5c;
+}
+
+#ai730-fab-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+#ai730-fab-label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ── Panel ───────────────────────────────────────────────── */
+#ai730-panel {
+  position: fixed;
+  bottom: 90px;
+  right: 28px;
+  z-index: 2147483645;
+  width: 340px;
+  max-height: 80vh;
+  background: #faf8f3;
+  border: 1.5px solid #c8a84b;
+  border-radius: 12px;
+  box-shadow: 0 12px 48px rgba(26,58,92,0.22), 0 2px 8px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: ai730-slide-up 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+@keyframes ai730-slide-up {
+  from { opacity: 0; transform: translateY(20px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+/* ── Panel header ────────────────────────────────────────── */
+#ai730-panel-header {
+  background: #1a3a5c;
+  color: #fff;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #c8a84b;
+  flex-shrink: 0;
+}
+
+#ai730-panel-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.ai730-icon-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  transition: background 0.15s;
+  line-height: 1;
+}
+
+.ai730-icon-btn:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* ── Views (scrollable body) ─────────────────────────────── */
+.ai730-view {
+  overflow-y: auto;
+  padding: 14px;
+  flex: 1;
+}
+
+.ai730-view::-webkit-scrollbar { width: 4px; }
+.ai730-view::-webkit-scrollbar-thumb { background: #c8a84b; border-radius: 2px; }
+
+/* ── Drop zone ───────────────────────────────────────────── */
+#ai730-dropzone {
+  border: 2px dashed #bba96a;
+  border-radius: 8px;
+  padding: 22px 14px;
+  text-align: center;
+  cursor: pointer;
+  background: #fff;
+  transition: all 0.2s;
+}
+
+#ai730-dropzone:hover,
+#ai730-dropzone.ai730-drag {
+  border-color: #1a3a5c;
+  background: #eef2f8;
+}
+
+#ai730-drop-icon {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+#ai730-drop-text {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+/* ── Status ──────────────────────────────────────────────── */
+.ai730-status {
+  font-size: 13px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.ai730-status-info  { background: #eef2f8; color: #1a3a5c; border: 1px solid #b0ccee; }
+.ai730-status-error { background: #fff0f0; color: #a00;    border: 1px solid #f5c6c6; }
+
+/* ── Notes ───────────────────────────────────────────────── */
+.ai730-notes {
+  font-size: 12px;
+  background: #fffbea;
+  border: 1px solid #e0c96e;
+  border-radius: 6px;
+  padding: 8px 10px;
+  color: #5c4400;
+  margin-top: 10px;
+}
+
+/* ── Section title ───────────────────────────────────────── */
+.ai730-section-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #1a3a5c;
+  font-weight: 600;
+  margin: 12px 0 8px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 4px;
+}
+
+/* ── Field rows ──────────────────────────────────────────── */
+.ai730-field-row {
+  margin-bottom: 8px;
+}
+
+.ai730-field-label {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 3px;
+  font-family: 'DM Mono', monospace;
+}
+
+.ai730-field-val {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: 'DM Mono', monospace;
+  background: #f0fff4;
+  border-color: #68b88a;
+  color: #1a3a1a;
+  transition: border-color 0.2s;
+}
+
+.ai730-field-val:focus {
+  outline: none;
+  border-color: #1a3a5c;
+  background: #fff;
+}
+
+/* ── Inject bar ──────────────────────────────────────────── */
+#ai730-inject-bar {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.ai730-btn {
+  flex: 1;
+  padding: 9px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 13px;
+  font-family: 'EB Garamond', Georgia, serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.2px;
+}
+
+.ai730-btn-primary {
+  background: #1a3a5c;
+  color: #fff;
+}
+
+.ai730-btn-primary:hover {
+  background: #0f2540;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(26,58,92,0.3);
+}
+
+.ai730-btn-ghost {
+  background: transparent;
+  color: #1a3a5c;
+  border: 1px solid #1a3a5c;
+}
+
+.ai730-btn-ghost:hover {
+  background: #eef2f8;
+}
+
+/* ── Inject result ───────────────────────────────────────── */
+.ai730-inject-ok   { font-size:13px; color:#1a5c3a; background:#f0fff4; border:1px solid #68b88a; border-radius:5px; padding:8px 10px; margin-top:8px; }
+.ai730-inject-warn { font-size:13px; color:#7a5c00; background:#fffbea; border:1px solid #e0c96e; border-radius:5px; padding:8px 10px; margin-top:8px; }
+
+/* ── Input (settings) ────────────────────────────────────── */
+.ai730-input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 13px;
+  font-family: 'DM Mono', monospace;
+  background: #fff;
+  margin-bottom: 10px;
+}
+
+.ai730-input:focus {
+  outline: none;
+  border-color: #1a3a5c;
+}
+
+/* ── Hint text ───────────────────────────────────────────── */
+.ai730-hint {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+.ai730-footer {
+  font-size: 10px;
+  color: #aaa;
+  text-align: center;
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
