@@ -14,18 +14,28 @@
     "https://api.anthropic.com/*",
     "*://*/*"
   ],
-  "content_scripts": [
-    {
-      "matches": [
-        "https://dichiarazioni.agenziaentrate.gov.it/*",
-        "https://*.agenziaentrate.gov.it/*",
-        "*://*/*"
-      ],
-      "js": ["content.js"],
-      "css": ["overlay.css"],
-      "run_at": "document_idle"
-    }
-  ],
+"content_scripts": [
+  {
+    "matches": [
+      "https://*.agenziaentrate.gov.it/*",
+      "https://dichiarazioni.agenziaentrate.gov.it/*",
+      "https://telematici.agenziaentrate.gov.it/*",
+      "<all_urls>"
+    ],
+    "js": ["content.js"],
+    "css": ["overlay.css"],
+    "run_at": "document_end",
+    "all_frames": false
+  }
+],
+"host_permissions": [
+  "https://*.agenziaentrate.gov.it/*",
+  "<all_urls>"
+],
+"host_permissions": [
+  "https://*.agenziaentrate.gov.it/*",
+  "<all_urls>"
+],
   "action": {
     "default_popup": "popup.html",
     "default_title": "730 AI Compiler"
